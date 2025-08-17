@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Regulatory Insight</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <style>
+    body {
+      font-family: "Open Sans", sans-serif;
+      color: #444444;
+    }
+
+    a {
+      color: #149ddd;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #37b3ed;
+      text-decoration: none;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Raleway", sans-serif;
+    }
+
+    #main {
+      padding-top: 40px;
+    }
+    
+    /*----------Project Headers------------*/
+    .nlp-container {
+      background-image: url("./img/nlp_header.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /*---------End of Project Headers------*/
+
+    /*--------------------------------------------------------------
+    # Breadcrumbs
+    --------------------------------------------------------------*/
+    .breadcrumbs {
+      padding: 20px 0;
+      color: #fff;
+    }
+
+    .breadcrumbs h2 {
+      font-size: 26px;
+      font-weight: 700;
+      
+    }
+
+    .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .breadcrumbs ol li+li {
+      padding-left: 10px;
+    }
+
+    .breadcrumbs ol li+li::before {
+      display: inline-block;
+      padding-right: 10px;
+      color: #fff;
+      content: "/";
+    }
+
+    /*--------------------------------------------------------------
+    # Header
+    --------------------------------------------------------------*/
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 300px;
+      transition: all ease-in-out 0.5s;
+      z-index: 9997;
+      transition: all 0.5s;
+      padding: 0 15px;
+      background: #00202c; /*-- Side bar color */
+      overflow-y: auto;
+    }
+
+    #header .profile img {
+      margin: 15px auto;
+      display: block;
+      width: 120px;
+      border: 8px solid #db0a0a; /*-- Oval block on top of Name. Replace with something professional */
+    }
+
+    #header .profile h1 {
+      font-size: 24px;
+      margin: 0;
+      padding: 0;
+      font-weight: 600;
+      -moz-text-align-last: center;
+      text-align-last: center;
+      font-family: "Poppins", sans-serif;
+    }
+
+    #header .profile h1 a,
+    #header .profile h1 a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    #header .profile .social-links a {
+      font-size: 18px;
+      display: inline-block;
+      background: #212431;
+      color: #fff;
+      line-height: 1;
+      padding: 8px 0;
+      margin-right: 4px;
+      border-radius: 50%;
+      text-align: center;
+      width: 36px;
+      height: 36px;
+      transition: 0.3s;
+    }
+
+    #header .profile .social-links a:hover {
+      background: #149ddd;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 1199px) {
+      #header {
+        left: -300px;
+      }
+    }
+
+    /*--------------------------------------------------------------
+    # Navigation Menu
+    --------------------------------------------------------------*/
+    .nav-menu {
+      padding: 30px 0 0 0;
+    }
+
+    .nav-menu * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-menu>ul>li {
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .nav-menu a,
+    .nav-menu a:focus {
+      display: flex;
+      align-items: center;
+      color: #b4b0a8;
+      padding: 12px 15px;
+      margin-bottom: 8px;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    .nav-menu a i,
+    .nav-menu a:focus i {
+      font-size: 24px;
+      padding-right: 8px;
+      color: #6f7180;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu .active,
+    .nav-menu .active:focus,
+    .nav-menu li:hover>a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .nav-menu a:hover i,
+    .nav-menu .active i,
+    .nav-menu .active:focus i,
+    .nav-menu li:hover>a i {
+      color: #149ddd;
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav-toggle {
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      z-index: 9998;
+      border: 0;
+      font-size: 24px;
+      transition: all 0.4s;
+      outline: none !important;
+      background-color: #149ddd;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 0;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+    
+    body.mobile-nav-active {
+      overflow: hidden;
+    }
+
+    body.mobile-nav-active #header {
+      left: 0;
+    }
+
+    /*--------------------------------------------------------------
+    # Portfolio Details
+    --------------------------------------------------------------*/
+    .portfolio-details {
+      padding-top: 40px;
+    }
+
+    .portfolio-details .portfolio-details-slider img {
+      width: 100%;
+    }
+    
+    .portfolio-details .portfolio-info {
+      padding: 30px;
+      box-shadow: 0px 0 30px rgba(5, 13, 24, 0.08);
+    }
+
+    .portfolio-details .portfolio-info h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .portfolio-details .portfolio-info ul {
+      list-style: none;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    .portfolio-details .portfolio-info ul li+li {
+      margin-top: 10px;
+    }
+
+    .portfolio-details .portfolio-description {
+      padding-top: 30px;
+    }
+
+    .portfolio-details .portfolio-description h2 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #00202c
+    }
+
+    .portfolio-details .portfolio-description p {
+      padding: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs nlp-container">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>NLP for Regulatory Insights</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Project Details</li>
+          </ol>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <p>Capstone Project | University of Cambridge | June 2025</p>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <a href="#">www.example.com</a>
+        </div>
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="portfolio-description portfolio-info">
+          <h2>Evaluating G-SIB Communications Beyond Financial Reports</h2>
+          <p>
+            In support of the Bank of England’s supervisory goals, this project explored unstructured financial communications—specifically Q&A transcripts and presentations—from two Global Systemically Important Banks (G-SIBs): JP Morgan and UBS. These materials often contain forward-looking sentiment and early risk indicators that are critical for proactive oversight but remain underutilized.
+            The objective was to develop a scalable NLP-based solution that extracts structured insights from executive communications, enabling timely and informed decision-making for financial supervision.
+          </p>
+          <h3>Tools & Technologies</h3>
+          <div class="row">
+              <div class="col-lg-8">                
+                <li><strong>Python</strong>: PyMuPDF · OpenAI GPT-4o · Phi-4 · FinBERT · RoBERTa · RAG · OpenAI Agents SDK · LangChain · </li>
+                <li><strong>Visualization</strong>: Power BI</li>
+                <li><strong>UI</strong>: Gradio</li>
+              </div>
+              <div class="col-lg-4">                
+                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+              </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Image Section -->
+        <div class="portfolio-description text-center">
+          <img src="./img/nlp_dashboard.png" class="img-fluid" alt="NLP Dashboard">
+        </div>
+
+        <!-- Approach Section -->
+        <div class="portfolio-description portfolio-info">
+          <h2>Approach: Hybrid NLP Pipeline for Supervisory Insight</h2>
+          <p>
+            To address key supervisory questions, we designed a modular, end-to-end pipeline that combines domain-specific NLP tasks with agentic reasoning and retrieval-augmented generation (RAG). The solution extracts structured insights from unstructured G-SIB communications, enabling both qualitative interpretation and quantitative risk detection.
+          </p>
+
+          <h3>Key Components:</h3>
+              
+          <h5><b>Data Structuring & Extraction:</b></h5>
+          <p>Used PyMuPDF and regex for initial parsing, followed by GPT-4o-mini for structured extraction of Q&A pairs and speaker attribution. Prompt engineering ensured verbatim extraction and downstream consistency</p>
+          
+          <h5><b>NLP Task Modules:</b></h5>
+          <ul>
+          <li>Topic Modelling: Phi-4 selected for its coherent, finance-specific topic generation across 20 predefined business themes.</li>
+          <li>Sentiment & Tone Analysis: FinBERT and GPT-4o-mini assessed sentiment polarity and tonal nuance across analyst interactions.</li>
+          <li>Answer Avoidance Detection: Phi-4 multimodal model identified evasive responses using synthetic examples and prompt-based generalization.</li>
+          <li>Mismatch Identification: Combined RAG and RoBERTa-MNLI to detect inconsistencies between transcripts and official disclosures.</li>
+          <li>Metric Summarisation: RAG pipeline extracted and visualized key financial indicators (e.g., CET1, EPS, LCR) for trend analysis.</li>
+          </ul>
+          <p></p>
+          <h5><b>Agentic Architecture:</b></h5>
+          <p>Deployed four specialized agents (Admin, Market Research, Analyst EWI, Root) to route queries, synthesize insights, and populate a traffic-light Early Warning Indicator (EWI) dashboard.</p>
+          <h5><b>End-User Products:</b></h5>
+          <li>Power BI Dashboard: Interactive visuals track sentiment, topic volatility, avoidance, and financial metrics across time and institutions.</li>
+          <li>Earnings Transcript Chatbot: GPT-powered interface enables contextual Q&A exploration, backed by RAG and agentic routing.</li>
+        </div>
+
+
+
+        <div class="portfolio-description">
+          <h2>Technical Outcomes and Next Steps</h2>
+          <p>
+            This project validated the use of advanced NLP and agent-based architectures to transform unstructured financial communications into structured, actionable insights. The Early Warning Indicator (EWI) framework introduced a novel lens for assessing earnings performance, enabling detection of risk-prone quarters, sentiment misalignment, and shifts in investor focus.
+            By integrating domain-specific models with generative AI in a scalable, interactive interface, the solution enhances supervisory speed and interpretability. Initial results from JPMorgan and UBS show strong signal potential, with future improvements needed in retrieval accuracy, discrepancy detection, and trend generalization.
+            This hybrid approach establishes a robust foundation for real-time, AI-driven monitoring of systemic financial communication risk across institutions.
+          </p>
+          <h5>Future possible enhancements</h5>
+              <li>Automated quarterly activation pipeline triggered by earnings release</li>
+              <li>Migration to LangChain for advanced agentic logic</li>
+              <li>Multi-source RAG collections for improved retrieval precision</li>
+              <li>Named Entity Recognition (NER) agent for contextual accuracy</li>
+              <li>Longitudinal NLP trend detection for predictive insights</li>
+              <li>Scalability to more G-SIBs and regional banks</li>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+</body>
+
+</html>
